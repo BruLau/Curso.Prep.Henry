@@ -141,6 +141,37 @@ function multiplicarArgumentos() {
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
   // falta hacer
+  var cont2=0, argu, cont= 0, palabra;
+ for(var i = 0 ; i<arguments.length; i++)
+ {
+    if(arguments[i]===undefined)
+    {
+      cont++;
+    }
+    else
+    {
+     cont2++;
+     palabra=arguments[i];
+    }
+
+    if(i===0)
+    {
+    argu= arguments[0];
+    }
+    else
+    {
+      argu= argu* arguments[i];
+    }
+  }
+if(cont===(arguments.length))
+{
+  return 0;
+}
+if(cont2===1)
+{
+  return palabra;
+}
+return argu;
 }
 
 
@@ -150,12 +181,12 @@ function cuentoElementos(arreglo){
   var contador = 0;
   for(var i=0; i<arreglo.length; i++)
   {
-    if(arreglo[i]<18)
+    if(arreglo[i]>18)
     {
-      contador++;
+      contador = contador + 1;
     }
   }
-  return (contador);
+  return(contador);
 }
 
 
@@ -219,6 +250,33 @@ function mesesDelAño(array) {
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
+  var cont=0;
+  for(i=0; i<array.length; i++)
+  {
+    if(array[i]==="Enero" || array[i]==="Marzo" || array[i]==="Noviembre")
+    { 
+      if(array[i]===0)
+      {
+        var nuevoarray = array[i];
+        cont++;
+      }
+      else
+      {
+        nuevoarray = nuevoarray + " " + array[i];
+        cont++;
+      }
+    }
+  }
+ if(cont!==3)
+ {
+   return "No se encontraron los meses pedidos";
+ }
+ else
+   {
+     var nuevo = nuevoarray.split(" ");
+     nuevo.shift();
+     return nuevo;
+   }
 }
 
 
@@ -226,6 +284,17 @@ function mayorACien(array) {
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
   // Tu código:
+var arraynuevo=[];
+var cont=0
+  for(var i=0; i<array.length; i++)
+    {
+      if(array[i]>100)
+      {
+        arraynuevo[cont] = array[i];
+        cont= cont + 1;
+      }
+    }
+return arraynuevo;
 }
 
 
@@ -237,6 +306,26 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
+  var chau = false , cont=0, array=[];
+  for(var i=0; i<10; i++)
+  {
+    numero = numero + 2;
+    array[cont] = numero;
+    cont++;
+    if(numero===i)
+    {
+      chau = true;
+      break
+    }  
+  }
+  if(chau===true)
+  {
+    return "Se interrumpió la ejecución";
+  }
+  else
+  {
+    return array;
+  }
 }
 
 
@@ -247,6 +336,17 @@ function continueStatement(numero) {
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
+  var array=[], cont=0;
+  for(var i=0; i<10 ; i++)
+  {
+    if(i!==4)
+    {
+      numero = numero + 2;
+      array[cont]=numero;
+      cont++;
+    }
+  }
+  return array;
 }
 
 

@@ -10,6 +10,13 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
+  let array = []; i=0
+  for(var key in objeto)
+  {
+    array[i] = [key, objeto[key]];
+    i++;
+  }
+  return array;
 }
 
 
@@ -18,6 +25,19 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+obj={};
+for(var i=0; i<string.length; i++)
+{ 
+    if(obj[string[i]]=== undefined)
+    {
+    obj[string[i]] = 1;
+    }
+    else
+    {
+      obj[string[i]] = obj[string[i]] + 1;
+    }
+}
+return obj;
 }
 
 
@@ -26,6 +46,36 @@ function capToFront(s) {
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+  let may=[], array =[], array2=[], resultado="";
+  array = s.split("");
+  for(var i = 0; i<array.length ; i++)
+  {
+     if((array[i].toUpperCase())===array[i])
+     {
+        may.unshift(array[i]);
+     }
+     else
+     {
+        may.push(array[i]);
+     }
+  }
+  
+  for(var j = (may.length-1); j>=0 ; j--)
+  {
+    if(may[j] === (may[j].toUpperCase())) 
+    {
+      array2.push(may[j]);
+    }
+  }
+  for(k=0 ; k<may.length; k++)
+  {
+    if(may[k] !== (may[k].toUpperCase())) 
+    {
+      array2.push(may[k]);
+    }
+  }
+  resultado = array2.join("");
+  return resultado;
 }
 
 

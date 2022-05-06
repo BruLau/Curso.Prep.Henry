@@ -85,6 +85,7 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
+
 } 
 
 
@@ -100,6 +101,11 @@ function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
+  function filtro(cadena)
+  {
+    return cadena!= a || cadena!= b|| cadena!= c;
+  }
+  let resultado = cadena.filter(filtro);
 }
 
 

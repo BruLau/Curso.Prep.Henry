@@ -94,6 +94,81 @@ function capicua(numero){
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
+  let cadena="", cant =0, izq="", der="", val="" ;
+  cadena= numero.toString();
+  cant = cadena.length;
+// si es par
+  if(cant%2===0)
+  {
+    for(var i=0 ; i<=cant/2 ; i++)
+    {
+      if(cadena[i]===cadena[0])
+      {
+        izq= cadena[0];
+      }
+      else
+      {
+        izq = izq + cadena[i];
+      }
+    }
+    for(var j=cant; j>cant/2; j--)
+    {
+      if(cadena[j]===cadena[cant])
+      {
+        der= cadena[cant];
+      }
+      else
+      {
+        der = der + cadena[j];
+      }
+    }
+ 
+    if(izq===der)
+    {
+      return "Es capicua";
+    }
+    else
+    {
+      return "No es capicuua";
+    }
+  }
+  // si es impar
+  
+  else
+  {
+    let cad = Math.floor(cant/2);
+    for(var i=0 ; i<cad ; i++)
+    {
+      if(cadena[i]===cadena[0])
+      {
+        izq= cadena[0];
+      }
+      else
+      {
+        izq = izq + cadena[i];
+      }
+    }
+    for(var j=cant-1; j>cad; j--)
+    {
+      if(cadena[i]===cadena[cant-1])
+      {
+        der= cadena[cant-1];
+      }
+      else
+      {
+        der = der + cadena[j];
+      }
+    }
+
+    if(izq===der)
+    {
+      return "Es capicua";
+    }
+    else
+    {
+      return izq + " " + der;
+    }
+  }
 }
 
 

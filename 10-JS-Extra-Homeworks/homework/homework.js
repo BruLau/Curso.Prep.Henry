@@ -111,11 +111,11 @@ function capicua(numero){
         izq = izq + cadena[i];
       }
     }
-    for(var j=cant; j>cant/2; j--)
+    for(var j=cant-1; j>cant/2; j--)
     {
       if(cadena[j]===cadena[cant])
       {
-        der= cadena[cant];
+        der= cadena[cant-1];
       }
       else
       {
@@ -129,7 +129,7 @@ function capicua(numero){
     }
     else
     {
-      return "No es capicuua";
+      return "No es capicua";
     }
   }
   // si es impar
@@ -166,7 +166,7 @@ function capicua(numero){
     }
     else
     {
-      return izq + " " + der;
+      return "No es capicua";
     }
   }
 }
@@ -176,11 +176,17 @@ function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
-  function filtro(cadena)
+  let array = [] , cont = 0, modif= "";
+  for(var i=0; i<cadena.length ; i++)
   {
-    return cadena!= a || cadena!= b|| cadena!= c;
+    if(cadena[i]!=="a" && cadena[i]!=="c" && cadena[i]!=="b")
+    {
+      array[cont] = cadena[i];
+      cont++;
+    }
   }
-  let resultado = cadena.filter(filtro);
+  modif = array.join("")
+  return modif;
 }
 
 
@@ -188,6 +194,38 @@ function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
+  let array= [];
+  for(var i=0; i<arr.length; i++)
+  {
+    if(i===0)
+    {
+      array[0]=arr[i];
+    }
+    else
+    {
+      while(arr.length!==array.length)
+      {
+          for(var j=0; j<arr.length; j++)  
+            {
+              let cond=0, cont=0;
+              while(cond===0 && arr[j]!==array[cont])
+                {
+                  if(array[cont] === undefined || arr[j].length < array[cont].length )
+                  {
+                      array[cont]= arr[j];
+                      cond=5;
+                  }
+                  else
+                  {
+                    cont++;
+                  }
+                }
+            }
+      }
+    return array;
+    }
+  }
+  
 }
 
 
